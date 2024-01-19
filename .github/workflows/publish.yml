@@ -1,0 +1,38 @@
+name: Publish changes
+
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install packages
+        run: npm i
+
+      - name: Create folders
+        run: mkdir -p build/lib
+
+      - name: Copy source
+        run: cp -a src/. build
+
+      - name: Copy libraries and assets into build
+        run: cp -a node_modules/fuse.js/dist/fuse.min.mjs build/lib/fuse.min.mjs
+        run: cp -a node_modules/feather-icons/dist/icons/clipboard.svg build/lib/clipboard.svg
+
+      - name: Publish to pages
+        uses: rayluo/github-pages-overwriter@v1.3
+        with:
+          source-directory: build
+          target-branch: pages
