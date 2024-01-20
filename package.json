@@ -1,0 +1,30 @@
+{
+  "name": "r2modman-profile-viewer",
+  "version": "1.0.0",
+  "description": "Web app to view r2modman/thunderstore mod manager profiles without downloading mods",
+  "scripts": {
+    "build": "node index.js",
+    "dev": "node index.js --dev",
+    "test": "echo \"Error: no tests\" && exit 1"
+  },
+  "author": "https://github.com/06000208",
+  "homepage": "https://06000208.github.io",
+  "license": "CC0-1.0",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "feather-icons": "^4.29.1",
+    "fflate": "^0.8.1",
+    "filehound": "^1.17.6",
+    "fuse.js": "^7.0.0",
+    "pify": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "esbuild": "^0.19.11",
+    "fs-extra": "^11.2.0"
+  }
+}
