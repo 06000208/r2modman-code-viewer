@@ -22,7 +22,7 @@ jobs:
         run: npm i
 
       - name: Build script
-        run: node run build
+        run: npm run build
 
       - name: Publish to pages
         uses: rayluo/github-pages-overwriter@v1.3
