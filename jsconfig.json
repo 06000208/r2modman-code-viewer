@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "strictNullChecks": true,
+        "moduleResolution": "NodeNext",
+        "module": "NodeNext",
+        "target": "ESNext",
+        "lib": [
+            "ESNext",
+        ],
+    },
+    "exclude": [
+        ".vscode",
+        "logs",
+        "node_modules",
+    ]
+}

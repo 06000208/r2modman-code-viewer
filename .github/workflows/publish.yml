@@ -21,15 +21,8 @@ jobs:
       - name: Install packages
         run: npm i
 
-      - name: Create folders
-        run: mkdir -p build/lib
-
-      - name: Copy source
-        run: cp -a src/. build
-
-      - name: Copy libraries and assets into build
-        run: cp -a node_modules/fuse.js/dist/fuse.min.mjs build/lib/fuse.min.mjs
-        run: cp -a node_modules/feather-icons/dist/icons/clipboard.svg build/lib/clipboard.svg
+      - name: Build script
+        run: node run build
 
       - name: Publish to pages
         uses: rayluo/github-pages-overwriter@v1.3
